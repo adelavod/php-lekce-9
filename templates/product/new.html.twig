@@ -3,11 +3,14 @@
 {% block title %}New Product{% endblock %}
 
 {% block body %}
-    <h1>Create new Product</h1>
+    <h1>Vložte nový produkt</h1>
+
+    <img src= "https://i.cbc.ca/1.4930973.1543875171!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/goats.jpg" class="img-fluid" alt="Responsive image">
 
     {{ form_start(form) }}
+
         {{ form_widget(form) }}
-        <button class="btn">Save</button>
+        <button class="btn btn-success">Ulož</button>
     {{ form_end(form) }}
 
     <a href="{{ path('product_index') }}">back to list</a>

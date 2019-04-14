@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Entity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -18,16 +19,19 @@ class User
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min = 3)
      */
     private $login;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Email()
      */
     private $email;
 
@@ -38,21 +42,26 @@ class User
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Url
      */
     private $website;
 
     /**
      * @ORM\Column(type="string", length=2)
+     * @Assert\Country()
      */
     private $country;
 
     /**
      * @ORM\Column(type="string", length=25, nullable=true)
+     * @Assert\Choice({"clothes", "food", "electronics"})
      */
     private $favouriteCategory;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\GreaterThanOrEqual(0))
+     * @Assert\LessThanOrEqual(100)
      */
     private $defaultVat;
 
