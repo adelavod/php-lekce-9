@@ -31,10 +31,13 @@ class FormularekController extends AbstractController
             ->add('save', SubmitType::class, ['label' => 'Create Task']) // submit
             ->getForm();
 
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $formData = $form->getData();
+
+
         }
 
         return $this->render('formularek/index.html.twig', [
@@ -42,6 +45,7 @@ class FormularekController extends AbstractController
             'form' => $form->createView(),
             'task' => $task ?? null,
             'priority' => $priority ?? null,
-            'submittedData' => $formData ?? []
+            'submittedData' => $formData ?? [],
+            
         ]);
     }}
