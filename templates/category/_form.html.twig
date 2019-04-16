@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+  <div class="row" style="background-color: pink">
+    <div class="container col-md-6" style=padding:40px>
+        {{ form_start(form) }}
+
+        {{ form_label(form.name) }}<br>
+        {{ form_widget(form.name) }}<br>
+        {{ form_errors(form.name) }}
+
+        {{ form_label(form.description) }}<br>
+        {{ form_widget(form.description) }}<br>
+        {{ form_errors(form.description) }}
+
+        {{ form_label(form.url) }}<br>
+        {{ form_widget(form.url) }}<br>
+        {{ form_errors(form.url) }}
+
+        {{ form_label(form.priority) }}<br>
+        {{ form_widget(form.priority) }}<br>
+        {{ form_errors(form.priority) }}
+
+        {{ form_widget(form.visible) }} {{ form_label(form.visible) }}<br>
+
+        <h3>Promotion</h3>
+
+        {{ form_label(form.type) }}<br>
+        {{ form_widget(form.type) }}<br>
+        {{ form_errors(form.type) }}
+
+
+        <button class="btn" style="background-color: hotpink">{{ button_label|default('Save') }}</button>
+        {{ form_end(form) }}
+    </div>
+      kuku
+
+        <div class="container col-md-6">
+
+            <img src='../../public/imgs/mexican-walking-fish.jpg' class="img-fluid rounded float-center" alt="Responsive image">
+
+        </div>
+
+    </div>
+
+{% endblock %}
